@@ -19,6 +19,11 @@ project "yaml-cpp"
 		"include/"
 	}
 
+	defines
+	{
+		"YAML_CPP_STATIC_DEFINE"
+	}
+
 	filter "system:windows"
 		systemversion "latest"	
 
@@ -33,3 +38,4 @@ project "yaml-cpp"
 	filter "configurations:Dist"
 		runtime "Release"
 		optimize "on"
+		symbols "off"
