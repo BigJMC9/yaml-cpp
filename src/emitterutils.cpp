@@ -1,4 +1,5 @@
 #include <algorithm>
+#include <cstdint>
 #include <iomanip>
 #include <sstream>
 
@@ -173,11 +174,11 @@ bool IsValidPlainScalar(const std::string& str, FlowType::value flowType,
   }
 
   // then check until something is disallowed
-  static const RegEx& disallowed_flow =
+  static const RegEx disallowed_flow =
       Exp::EndScalarInFlow() | (Exp::BlankOrBreak() + Exp::Comment()) |
       Exp::NotPrintable() | Exp::Utf8_ByteOrderMark() | Exp::Break() |
       Exp::Tab() | Exp::Ampersand();
-  static const RegEx& disallowed_block =
+  static const RegEx disallowed_block =
       Exp::EndScalar() | (Exp::BlankOrBreak() + Exp::Comment()) |
       Exp::NotPrintable() | Exp::Utf8_ByteOrderMark() | Exp::Break() |
       Exp::Tab() | Exp::Ampersand();
