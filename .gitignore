@@ -3,5 +3,9 @@ build/
 /bazel-*
 
 # Directories
-bin-int/
-bin/
+bin-int/*
+bin/*
+*.vcxproj
+*.user
+*.filters
+*.sln
